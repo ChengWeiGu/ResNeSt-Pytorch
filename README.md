@@ -15,8 +15,7 @@ https://github.com/zhanghang1989/ResNeSt
 
 
 2. command: python train_resneSt.py -t  
-    => If the dataset is pretty smaller, and there is no need to divide a pickle file,  
-    such as LCD images (less than 10k ea).  
+    => If the dataset is pretty smaller, so there is no need to divide a pickle file.(less than 10k ea)  
 
 
 ## Reference:  
