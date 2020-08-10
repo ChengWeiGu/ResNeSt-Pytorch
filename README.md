@@ -1,4 +1,4 @@
-# ResneSt-Pytorch
+# ResNeSt-Pytorch
 Implementation of novel backbone to do image classification for LCD and PCB  
 
 ## Model Installation:  
@@ -10,13 +10,13 @@ https://github.com/zhanghang1989/ResNeSt
 
 1. command: python train_resneSt_gen.py -t  
 
-=> For PCB data, there are lots of images estimated about 200k ea,  
-so we must divide a picke file into several pickles.  
+    => For PCB data, there are lots of images estimated about 200k ea,  
+    so we must divide a picke file into several pickles.  
 
 
 2. command: python train_resneSt.py -t  
-=> If the dataset is pretty smaller, and there is no need to divide a pickle file,  
-such as LCD images (less than 10k ea).  
+    => If the dataset is pretty smaller, and there is no need to divide a pickle file,  
+    such as LCD images (less than 10k ea).  
 
 
 ## Reference:  
