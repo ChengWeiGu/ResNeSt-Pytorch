@@ -116,6 +116,7 @@ if __name__ == "__main__":
             running_loss=0
             accuracy=0
             sub_total = 0
+            display_loss=0
             for i, data in enumerate(train_loader, 1):
                 images, labels = data
                 
@@ -133,8 +134,10 @@ if __name__ == "__main__":
                 accuracy += (predicted == labels).sum().item()
                 loss = criterion(outputs, labels)
                 running_loss+=loss.item()
-                if(i%display_frequency == 0):
-                    print('Epoch: {} Batch: {}/{} loss: {:.6f} acc:{:.2f}'.format(epoch+1, i, len(train_loader), loss.item(),(accuracy/sub_total)*100))
+                display_loss+=loss.item()
+                if(i%display_frequency == (display_frequency-1)):
+                    print('Epoch: {} Batch: {}/{} loss: {:.6f} acc:{:.2f}'.format(epoch+1, i, len(train_loader), display_loss/display_frequency,(accuracy/sub_total)*100))
+                    display_loss = 0
 
                 loss.backward()
                 optimizer.step()
@@ -150,7 +153,7 @@ if __name__ == "__main__":
                 
             
             
-            train_losses.append(running_loss/len(train_loader))
+            train_losses.append(current_loss)
             train_accu.append((accuracy/sub_total)*100)
             
             val_loss=0
